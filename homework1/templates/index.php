@@ -15,11 +15,11 @@
 
     <section>
 
-        <?php foreach ($news as $art) { ?>
+        <?php foreach ($news as $article) { ?>
 
             <article>
-                <a href="/homework1/article.php?id=<?php echo $art->getId(); ?>">
-                    <?php echo $art->getHeader(); ?>
+                <a href="/homework1/article.php?id=<?php echo $article->getId(); ?>">
+                    <?php echo $article->getHeader(); ?>
                 </a>
             </article>
 

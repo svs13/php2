@@ -5,20 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $header; ?></title>
+    <title><?php echo $article->getHeader(); ?></title>
 </head>
 <body>
 
 <header>
-    <h3><?php echo $header; ?></h3>
+    <h3><?php echo $article->getHeader(); ?></h3>
 </header>
 
 <section>
 
     <article>
-        <?php echo $content; ?>
+        <?php echo $article->getContent(); ?>
         <br>
-        <small>Автор: <?php echo $author; ?></small>
+        <small>Автор: <?php echo $article->getAuthor(); ?></small>
     </article>
 
 </section>

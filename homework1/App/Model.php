@@ -40,16 +40,16 @@ abstract class Model
         $db = new Db();
 
         $sql = 'SELECT * FROM ' . static::TABLE . ' WHERE id=:id';
-        $ps = [
+        $params = [
             ':id' => $id
         ];
 
-        $ar = $db->query($sql, static::class, $ps);
+        $data = $db->query($sql, static::class, $params);
 
-        if ( is_array($ar) ) {
-            if ( isset( $ar[0] ) ) {
+        if ( is_array($data) ) {
+            if ( isset( $data[0] ) ) {
 
-                return $ar[0];
+                return $data[0];
             }
         }
 
