@@ -3,6 +3,7 @@
 require  __DIR__ . '/autoload.php';
 
 if ( isset( $_GET['id'] ) ) {
+ if ( is_numeric( $_GET['id'] ))
 
     $article = \App\Models\Article::findById( $_GET['id'] );
 

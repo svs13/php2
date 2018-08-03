@@ -19,11 +19,9 @@ abstract class Model
 
     public static function findAll()
     {
-        $db = new Db();
-
         $sql = 'SELECT * FROM ' . static::TABLE; // подстановка внешних данных
 
-        $ret = $db->query($sql, static::class);
+        $ret = ( new Db() )->query($sql, static::class);
 
         if ( null !== $ret) {
 
@@ -37,14 +35,9 @@ abstract class Model
     public static function findById(string $id)
     {
 
-        $db = new Db();
-
         $sql = 'SELECT * FROM ' . static::TABLE . ' WHERE id=:id';
-        $params = [
-            ':id' => $id
-        ];
 
-        $data = $db->query($sql, static::class, $params);
+        $data = ( new Db() )->query($sql, static::class, [':id' => $id]);
 
         if ( is_array($data) ) {
             if ( isset( $data[0] ) ) {
@@ -56,5 +49,19 @@ abstract class Model
         return false;
     }
 
+
+    public static function findLastRecords(int $count)
+    {
+        $sql = 'SELECT * FROM ' . static::TABLE . ' ORDER BY id DESC LIMIT ' . $count;
+
+        $data = ( new Db() )->query($sql, static::class);
+
+        if ( is_array($data) ) {
+
+            return $data;
+        }
+
+        return false;
+    }
 
 }

@@ -34,10 +34,8 @@ class Db
         $sth = $this->dbh->prepare($query);
 
         if ( false !== $sth ) {
-            if ( $sth->execute($params) ) {
 
-                return true;
-            }
+            return $sth->execute($params); //успех - true, иначе - false
         }
 
         return false;

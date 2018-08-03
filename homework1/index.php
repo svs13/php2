@@ -2,7 +2,7 @@
 
 require  __DIR__ . '/autoload.php';
 
-$news = \App\Models\Article::findLast(3);
+$news = \App\Models\Article::findLastRecords(3);
 
 include __DIR__ . '/templates/index.php';
 
