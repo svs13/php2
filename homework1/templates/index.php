@@ -19,7 +19,7 @@
 
             <article>
                 <a href="/homework1/article.php?id=<?php echo $article->getId(); ?>">
-                    <?php echo $article->header; ?>
+                    <?php echo $article->content; ?>
                 </a>
             </article>
 
