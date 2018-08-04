@@ -7,13 +7,11 @@ if ( isset( $_POST['command'] ) ) {
     switch ( $_POST['command'] ) {
 
         case 'add':
-            if ( isset( $_POST['header'], $_POST['content'], $_POST['author'] ) ) {
+            if ( isset( $_POST['content']) ) {
 
                 $article = new \App\Models\Article();
 
-                $article->header = $_POST['header'];
                 $article->content = $_POST['content'];
-                $article->author = $_POST['author'];
 
                 $article->save();
 
@@ -21,16 +19,14 @@ if ( isset( $_POST['command'] ) ) {
             break;
 
         case 'edit':
-            if ( isset( $_POST['id'], $_POST['header'], $_POST['content'], $_POST['author'] ) ) {
+            if ( isset( $_POST['id'], $_POST['content']) ) {
                 if ( is_numeric( $_POST['id'] ) ) {
 
                     $article = \App\Models\Article::findById( $_POST['id'] );
 
                     if ( is_object($article) ) {
 
-                        $article->header = $_POST['header'];
                         $article->content =  $_POST['content'];
-                        $article->author = $_POST['author'];
 
                         $article->save();
 

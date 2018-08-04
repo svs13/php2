@@ -19,9 +19,7 @@
 
         <p>
             <form action="/homework2/adminPanel.php" method="post" name="addTrain">
-                <input type="text" name="header" size="10">
                 <input type="text" name="content" size="20">
-                <input type="text" name="author" size="10">
                 <button type="submit" name="command" value="add">Добавить</button>
             </form>
         </p>
@@ -30,9 +28,7 @@
             <p>
                 <form action="/homework2/adminPanel.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $article->getId(); ?>">
-                    <input type="text" name="header" size="10" value="<?php echo $article->header; ?>">
                     <input type="text" name="content" size="20" value="<?php echo $article->content; ?>">
-                    <input type="text" name="author" size="10" value="<?php echo $article->author; ?>">
                     <button type="submit" name="command" value="edit">Изменить</button>
                     <button type="submit" name="command" value="delete">Удалить</button>
                 </form>

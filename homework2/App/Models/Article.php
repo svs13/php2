@@ -11,8 +11,6 @@ class Article extends Model
 {
     protected static $table = 'news';
 
-    public $header;
     public $content;
-    public $author;
 
 }
