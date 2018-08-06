@@ -122,7 +122,6 @@ abstract class Model
         $sql = 'UPDATE ' . static::$table . ' SET ' . implode(', ', $sets) . ' WHERE id=:id';
 
         ( new Db() )->execute($sql, $data);
-
     }
 
 
@@ -144,10 +143,14 @@ abstract class Model
             $data[':' . $name] = $value;
         }
 
-        $sql = 'INSERT INTO ' . static::$table . ' (' . implode(', ', $cols) . ') VALUE (' . implode(', ', $binds) . ')';
+        $sql = 'INSERT INTO ' . static::$table . ' (' . implode(', ', $cols) . ') VALUES (' . implode(', ', $binds) . ')';
 
         $db = new Db();
-        $db->execute($sql, $data);
+
+        if ( !$db->execute($sql, $data) ) {
+            //ошибка
+            return;
+        }
 
         $this->id = $db->lastInsertId();
     }
