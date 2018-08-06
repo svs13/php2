@@ -1,9 +1,9 @@
 Команды базы данных
 USE test;
 CREATE TABLE news (id SERIAL, content TEXT);
-INSERT INTO news (content) VALUE ('Содержимое 1');
-INSERT INTO news (content) VALUE ('Содержимое 2');
-INSERT INTO news (content) VALUE ('Содержимое 3');
+INSERT INTO news (content) VALUES ('Содержимое 1');
+INSERT INTO news (content) VALUES ('Содержимое 2');
+INSERT INTO news (content) VALUES ('Содержимое 3');
 
 Редактирование от 31.07.18:
 1. Удалено расчленение объекта перед передачей в шаблон.
@@ -17,3 +17,6 @@ INSERT INTO news (content) VALUE ('Содержимое 3');
 
 Редактирование от 04.08.18
 1. Удалены лишние описания св-в в классе Article (по дз - только новость, ни заголовка, ни автора)
+
+Редактирование от 06.08.18
+1. Исправлена ошибка в строке запроса c VALUE на VALUES.

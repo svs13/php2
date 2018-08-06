@@ -7,7 +7,7 @@ $db = new \App\Db();
 //Запрос с подстановкой параметров
 echo '1. Запрос с подстановкой параметров';
 
-$q = 'INSERT INTO persons (lastname, age) VALUE (:ln, :age)';
+$q = 'INSERT INTO persons (lastname, age) VALUES (:ln, :age)';
 $ps = [
     ':ln' => 'Потеряшкин',
     ':age' => 42
@@ -46,7 +46,7 @@ var_dump( $db->execute($q) ); //true
 //Запрос с ошибкой в подстановке
 echo '5. Запрос с ошибкой в подстановке';
 
-$q = 'INSERT INTO persons (lastname, age) VALUE (:ln, :age)';
+$q = 'INSERT INTO persons (lastname, age) VALUES (:ln, :age)';
 $ps = [
     ':ln111' => 'Потеряшкин',
     ':age' => 42
@@ -91,7 +91,7 @@ $q = new \App\Db();
 //В аргументе params тип отличный от массива
 echo '10. В аргументе params тип отличный от массива (string) - Фатальная ошибка несоотвествия типов аргумента';
 
-$q = 'INSERT INTO persons (lastname, age) VALUE (:ln, :age)';
+$q = 'INSERT INTO persons (lastname, age) VALUES (:ln, :age)';
 $ps = 'crazy test';
 
 //var_dump( $db->execute($q, $ps) ); //фатал ошибка
@@ -102,7 +102,7 @@ $ps = 'crazy test';
 //В аргументе params тип отличный от массива
 echo '11. В аргументе params тип отличный от массива (int) - Фатальная ошибка несоотвествия типов аргумента';
 
-$q = 'INSERT INTO persons (lastname, age) VALUE (:ln, :age)';
+$q = 'INSERT INTO persons (lastname, age) VALUES (:ln, :age)';
 $ps = 42;
 
 //var_dump( $db->execute($q, $ps) ); //фатал ошибка
@@ -113,7 +113,7 @@ $ps = 42;
 //В аргументе params тип отличный от массива
 echo '12. В аргументе params - []';
 
-$q = 'INSERT INTO persons (lastname, age) VALUE (:ln, :age)';
+$q = 'INSERT INTO persons (lastname, age) VALUES (:ln, :age)';
 $ps = [];
 
 var_dump( $db->execute($q, $ps) ); //false, предупреждение - отсутствие аргументов
