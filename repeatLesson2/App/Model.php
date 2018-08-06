@@ -51,7 +51,7 @@ abstract class Model
         $sql = '
 INSERT INTO ' . static::$table . ' 
 (' . implode(', ', $cols) . ') 
-VALUE (' . implode(', ', $binds) . ')';
+VALUES (' . implode(', ', $binds) . ')';
 
         $db = new Db();
         $db->execute($sql, $data);
