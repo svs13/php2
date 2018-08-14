@@ -11,16 +11,13 @@ if ( isset( $_GET['id'] ) ) {
 
 if ( !is_object($article) ) {
 
-    header('Location: /homework2/index.php');
+    header('Location: /homework3/index.php');
 
     exit;
 }
 
 $view = new \App\View();
 $view->article = $article;
-
-var_dump( $view->article->author );
-var_dump($article);
 
 $view->display(__DIR__ . '/App/Templates/article.php');
 
