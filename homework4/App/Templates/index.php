@@ -23,7 +23,7 @@
         <?php foreach ($news as $article) { ?>
 
             <article>
-                <a href="/homework4/article/?id=<?php echo $article->getId(); ?>">
+                <a href="/homework4/article/?id=<?php echo $article->id; ?>">
                     <?php echo $article->content; ?>
                     <br>
                     <small>Автор: <?php echo $article->author->name ?? ''; ?></small>

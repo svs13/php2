@@ -2,21 +2,10 @@
 
 namespace App;
 
-use App\Models\Article;
-use App\Models\Author;
-
 abstract class Model
 {
 
     protected static $table = null;
-
-    protected $id;
-
-
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return static[]|bool

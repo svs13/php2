@@ -21,7 +21,7 @@
         <h3>Внесите изменения:</h3>
 
         <form action="/homework4/adminPanel/save/" method="post">
-            <input type="hidden" name="id" value="<?php echo $article->getId(); ?>">
+            <input type="hidden" name="id" value="<?php echo $article->id; ?>">
             <textarea rows="10" cols="45" name="content"><?php echo $article->content; ?></textarea> <br>
             <small>Автор: <?php echo $article->author->name ?? ''; ?></small> <br>
 
