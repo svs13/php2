@@ -7,6 +7,8 @@ abstract class Model
 
     protected static $table = null;
 
+    public $id;
+
     /**
      * @return static[]|bool
      */
