@@ -32,7 +32,7 @@
         <?php foreach ($news as $article) { ?>
             <p>
                 <form action="/homework3/adminPanel.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $article->getId(); ?>">
+                    <input type="hidden" name="id" value="<?php echo $article->id; ?>">
                     <input type="text" name="content" size="20" value="<?php echo $article->content; ?>">
                     <input type="text" readonly size="10" value="<?php echo $article->author->name ?? ''; ?>">
                     <button type="submit" name="command" value="edit">Изменить</button>
