@@ -18,7 +18,7 @@
         <?php foreach ($news as $article) { ?>
 
             <article>
-                <a href="/homework2/article.php?id=<?php echo $article->getId(); ?>">
+                <a href="/homework2/article.php?id=<?php echo $article->id; ?>">
                     <?php echo $article->content; ?>
                 </a>
             </article>

@@ -8,13 +8,7 @@ abstract class Model
 
     protected static $table = null;
 
-    protected $id;
-
-
-    public function getId()
-    {
-        return $this->id;
-    }
+    public $id;
 
 
     public static function findAll()

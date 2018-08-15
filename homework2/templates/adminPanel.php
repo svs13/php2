@@ -27,7 +27,7 @@
         <?php foreach ($news as $article) { ?>
             <p>
                 <form action="/homework2/adminPanel.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $article->getId(); ?>">
+                    <input type="hidden" name="id" value="<?php echo $article->id; ?>">
                     <input type="text" name="content" size="20" value="<?php echo $article->content; ?>">
                     <button type="submit" name="command" value="edit">Изменить</button>
                     <button type="submit" name="command" value="delete">Удалить</button>
