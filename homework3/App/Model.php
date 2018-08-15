@@ -2,9 +2,6 @@
 
 namespace App;
 
-use App\Models\Article;
-use App\Models\Author;
-
 abstract class Model
 {
 
