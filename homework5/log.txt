@@ -1,0 +1,5 @@
+2018-08-15 14:56:11 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework5\App\Model.php Line: 46 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-15 14:56:19 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework5\App\Model.php Line: 46 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-15 14:56:33 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework5\App\Model.php Line: 46 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-15 14:57:10 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework5\App\Db.php Line: 23 Message: Ошибка соединения с базой данных
+2018-08-15 14:57:33 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework5\App\Db.php Line: 23 Message: Ошибка соединения с базой данных
