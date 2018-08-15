@@ -8,13 +8,7 @@ abstract class Model
 
     protected const TABLE = null; //неизменно, должно быть переопределено наследником
 
-    protected $id;
-
-
-    public function getId()
-    {
-        return $this->id;
-    }
+    public $id;
 
 
     public static function findAll()
