@@ -79,10 +79,6 @@ abstract class Model
             $sql = 'DELETE FROM ' . static::$table . ' WHERE id=:id';
 
             ( new Db() )->execute($sql, [':id'=>$this->id]);
-
-            foreach ($this as $name => $value) { //очищаю св-ва объекта
-                $this->$name = null;
-            }
         }
     }
 

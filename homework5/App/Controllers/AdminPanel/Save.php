@@ -14,47 +14,27 @@ class Save extends AdminPanelController
      */
     protected function action()
     {
-        if ( isset( $_POST['command'] ) ) {
-
-            switch ( $_POST['command'] ) {
-                case 'edit':
-                    if ( isset( $_POST['id'], $_POST['content'] ) ) {
-
-                        if ( '' === $_POST['id'] ) { //новая новость
-                            $article = new \App\Models\Article();
-                        } else { //существующая новость
-                            $article = \App\Models\Article::findById( $_POST['id'] );
-                        }
-
-                        $property = [];
-                        $property['content'] = $_POST['content'];
-
-                        try {
-                            
-                            $article->fill($property);
-                            
-                        } catch (Validation $exception) {
-                            $errors = $exception->getAll();
-                        }
-
-                        if ( empty($errors) ) {
-                            $article->save();
-                        } else {
-                            unset($article);
-                        }
-
-                    }
-                    break;
-                case 'delete':
-                    if ( isset( $_POST['id'] ) ) {
-                        $article = \App\Models\Article::findById( $_POST['id'] );
-                        $article->delete();
-                    }
-                    break;
-            }
+        if ( !isset( $_POST['id'] ) ) {
+            $article = new \App\Models\Article();
+        } else {
+            $article = \App\Models\Article::findById( $_POST['id'] );
         }
 
-        $this->view->result = isset($article);
+        $property = [];
+        $property['content'] = $_POST['content'] ?? null;
+
+        try {
+
+            $article->fill($property);
+
+        } catch (Validation $exception) {
+            $errors = $exception->getAll();
+        }
+
+        if ( empty($errors) ) {
+            $article->save();
+        }
+        
         $this->view->errors = $errors ?? [];
 
         $this->view->display(__DIR__ . '/../../Templates/adminPanel/save.php');

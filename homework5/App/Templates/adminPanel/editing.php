@@ -14,28 +14,27 @@
 </head>
 <body>
 
-<section>
-
-    <article>
-
-        <h3>Внесите изменения:</h3>
-
-        <form action="/homework5/adminPanel/save/" method="post">
-            <input type="hidden" name="id" value="<?php echo $article->id; ?>">
-            <textarea rows="10" cols="45" name="content"><?php echo $article->content; ?></textarea> <br>
-            <small>Автор: <?php echo $article->author->name ?? ''; ?></small> <br>
-
-            <button type="submit" name="command" value="edit">Сохранить изменения</button>
-            <button type="submit" name="command" value="delete">Удалить новость</button>
-        </form>
-
-    </article>
-
-    <br>
-    <a href="/homework5/adminPanel/index/">Перейти к списку новостей</a>
-
-</section>
-
+    <header>
+        <h3>Редактирование новости</h3>
+    </header>
+    
+    <section>
+    
+        <article>
+    
+            <form action="/homework5/adminPanel/save/" method="post">
+                <input type="hidden" name="id" value="<?php echo $article->id; ?>">
+                <textarea rows="10" cols="45" name="content"><?php echo $article->content; ?></textarea> <br>
+                <small>Автор: <?php echo $article->author->name ?? ''; ?></small><br><br>
+                <input type="submit" value="Сохранить">
+            </form>
+    
+        </article>
+    
+        <br>
+        <a href="/homework5/adminPanel/index/">Перейти к списку новостей</a>
+    
+    </section>
 
 </body>
 </html>

@@ -15,31 +15,53 @@
 <body>
 
     <header>
-        <h3>Выберете новость для редактирования:</h3>
+        <h3>Список новостей</h3>
     </header>
-
+    
     <section>
-
+    
         <?php foreach ($news as $article) { ?>
-
+    
             <article>
-                <a href="/homework5/adminPanel/editing/?id=<?php echo $article->id; ?>">
-                    <?php echo $article->content; ?>
-                    <br>
+    
+                <p>
+                    <?php echo $article->content; ?><br>
                     <small>Автор: <?php echo $article->author->name ?? ''; ?></small>
-                </a>
+                </p>
+    
+                <p>
+                <form action="/homework5/adminPanel/editing/" method="get">
+                    <input type="hidden" name="id" value="<?php echo $article->id; ?>">
+                    <input type="submit" value="Изменить">
+                </form>
+                </p>
+    
+                <p>
+                <form action="/homework5/adminPanel/delete/" method="get">
+                    <input type="hidden" name="id" value="<?php echo $article->id; ?>">
+                    <input type="submit" value="Удалить">
+                </form>
+                </p>
+    
             </article>
-            <br>
-
+    
         <?php } ?>
-
-        <article>
-            <a href="/homework5/adminPanel/editing/?id=new">
-                Новая новость
-            </a>
-        </article>
-
-
+    
+    </section>
+    
+    <header>
+        <h3>Добавить новую новость</h3>
+    </header>
+    
+    <section>
+    
+        <p>
+        <form action="/homework5/adminPanel/save/" method="post">
+            <textarea rows="10" cols="45" name="content"></textarea> <br>
+            <input type="submit" value="Добавить">
+        </form>
+        </p>
+    
     </section>
 
 </body>

@@ -4,7 +4,7 @@ namespace App\Controllers\AdminPanel;
 
 use App\AdminPanelController;
 
-class Editing extends AdminPanelController
+class Delete extends AdminPanelController
 {
 
     /**
@@ -17,8 +17,10 @@ class Editing extends AdminPanelController
             return false;
         }
 
-        $this->view->article = \App\Models\Article::findById( $_GET['id'] );
-        $this->view->display(__DIR__ . '/../../Templates/adminPanel/editing.php');
+        $article = \App\Models\Article::findById( $_GET['id'] ); //Article
+        $article->delete();
+
+        $this->view->display(__DIR__ . '/../../Templates/adminPanel/delete.php');
     }
 
 }

@@ -14,27 +14,24 @@
 </head>
 <body>
 
-<header>
-    <h3>Изменения <?php echo $result ? 'выполнены успешно' : 'не выполнены'; ?></h3>
-</header>
-
-<section>
-
-    <?php if ( !empty($errors) ) { ?>
-        Возникшие ошибки:
-        <ul>
-            <?php foreach ($errors as $error) { ?>
-                <li><?php echo $error->getMessage(); ?></li>
-            <?php } ?>
-        </ul>
-    <?php } ?>
-
-    <p><a href="/homework5/adminPanel/index/">Перейти к списку новостей</a></p>
-
-
-
-</section>
-
+    <header>
+        <h3>Сохранение новости <?php echo empty($errors) ? 'выполнено успешно' : 'не выполнено'; ?></h3>
+    </header>
+    
+    <section>
+    
+        <?php if ( !empty($errors) ) { ?>
+            Возникшие ошибки:
+            <ul>
+                <?php foreach ($errors as $error) { ?>
+                    <li><?php echo $error->getMessage(); ?></li>
+                <?php } ?>
+            </ul>
+        <?php } ?>
+    
+        <p><a href="/homework5/adminPanel/index/">Перейти к списку новостей</a></p>
+    
+    </section>
 
 </body>
 </html>
