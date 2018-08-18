@@ -98,3 +98,12 @@ $article->content = 'text'; или $article->setContent('text');
 1. Описание св-ва id класса Model сделал публичным. Удалил метод getId()
 2. Изменил шаблон index.php, adminPanel.php
 3. Проверил работоспособность
+
+Работа над ошибками 17.08.18
+1. /App/Config.php изменил имя с $config на $instance.
+2. /App/Model.php delete() - удалено очищение свойств.
+3. В adminPanel.php выполнял 3 разных действия (добавления, удаления и редактирования). Это ужасно. Разбил его на части.
+- удалено 2 файла /adminPanel.php, /templates/adminPanel.php
+- добавлено 4 файла. В adminPanel: index.php, save.php, delete.php. В templates/adminPanel: index.php
+- изменил ссылку на админ-панель в /templates/index.php
+Проверил работоспособность.

@@ -9,7 +9,7 @@ class Config
 
     public $data;
 
-    protected static $config;
+    protected static $instance;
 
     protected function __construct()
     {
@@ -18,12 +18,12 @@ class Config
 
     public static function instance()
     {
-        if ( !is_object(self::$config) ) {
+        if ( !is_object(self::$instance) ) {
 
-            self::$config = new Config();
+            self::$instance = new Config();
         }
 
-        return self::$config;
+        return self::$instance;
     }
 
 }

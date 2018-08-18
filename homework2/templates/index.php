@@ -33,7 +33,7 @@
 
     <section>
 
-        <a href="/homework2/adminPanel.php">Перейти в админ-панель</a>
+        <a href="/homework2/adminPanel/index.php">Перейти в админ-панель</a>
 
     </section>
 
