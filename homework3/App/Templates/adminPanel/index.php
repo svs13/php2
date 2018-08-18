@@ -20,26 +20,37 @@
 
     <section>
 
-        <h4>Редактирование новостей</h4>
+        <h4>Добавление новости</h4>
 
         <p>
-            <form action="/homework3/adminPanel.php" method="post" name="addTrain">
+            <form action="/homework3/adminPanel/save.php" method="post">
                 <input type="text" name="content" size="20">
-                <button type="submit" name="command" value="add">Добавить</button>
+                <input type="submit" value="Добавить">
             </form>
         </p>
 
+        <h4>Список новостей</h4>
+
         <?php foreach ($news as $article) { ?>
             <p>
-                <form action="/homework3/adminPanel.php" method="post">
+                <form action="/homework3/adminPanel/save.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $article->id; ?>">
                     <input type="text" name="content" size="20" value="<?php echo $article->content; ?>">
                     <input type="text" readonly size="10" value="<?php echo $article->author->name ?? ''; ?>">
-                    <button type="submit" name="command" value="edit">Изменить</button>
-                    <button type="submit" name="command" value="delete">Удалить</button>
+                    <input type="submit" value="Изменить">
+                </form>
+            </p>
+            <p>
+                <form action="/homework3/adminPanel/delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $article->id; ?>">
+                    <input type="submit" value="Удалить">
                 </form>
             </p>
         <?php } ?>
+
+        <br>
+
+        <p><a href="/homework3/index.php">Перейти на главную</a></p>
 
     </section>
 

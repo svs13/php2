@@ -23,11 +23,13 @@
         <?php foreach ($news as $article) { ?>
 
             <article>
-                <a href="/homework3/article.php?id=<?php echo $article->id; ?>">
-                    <?php echo $article->content; ?>
-                    <br>
-                    <small>Автор: <?php echo $article->author->name ?? ''; ?></small>
-                </a>
+                <p>
+                    <a href="/homework3/article.php?id=<?php echo $article->id; ?>">
+                        <?php echo $article->content; ?>
+                        <br>
+                        <small>Автор: <?php echo $article->author->name ?? ''; ?></small>
+                    </a>
+                </p>
             </article>
 
         <?php } ?>
@@ -40,7 +42,7 @@
 
     <section>
 
-        <a href="/homework3/adminPanel.php">Перейти в админ-панель</a>
+        <a href="/homework3/adminPanel/index.php">Перейти в админ-панель</a>
 
     </section>
 

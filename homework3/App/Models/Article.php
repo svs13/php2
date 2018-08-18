@@ -39,6 +39,7 @@ class Article extends Model
             return null !== $this->author_id;
         }
 
+        return false;
     }
 
 }

@@ -20,4 +20,3 @@ $view = new \App\View();
 $view->article = $article;
 
 $view->display(__DIR__ . '/App/Templates/article.php');
-
