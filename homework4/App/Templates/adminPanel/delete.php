@@ -15,23 +15,11 @@
 <body>
 
 <header>
-    <h3>Редактирование новости</h3>
+    <h3>Удаление новости <?php echo $result ? 'выполнено успешно' : 'не выполнено'; ?></h3>
 </header>
 
 <section>
 
-    <article>
-
-        <form action="/homework4/adminPanel/save/" method="post">
-            <input type="hidden" name="id" value="<?php echo $article->id; ?>">
-            <textarea rows="10" cols="45" name="content"><?php echo $article->content; ?></textarea> <br>
-            <small>Автор: <?php echo $article->author->name ?? ''; ?></small> <br><br>
-            <input type="submit" value="Сохранить">
-        </form>
-
-    </article>
-
-    <br>
     <a href="/homework4/adminPanel/index/">Перейти к списку новостей</a>
 
 </section>

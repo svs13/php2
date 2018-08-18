@@ -9,47 +9,22 @@ class Save extends AdminPanelController
 
     protected function action()
     {
-        if ( isset( $_POST['command'] ) ) {
 
-            switch ( $_POST['command'] ) {
-                case 'edit':
-                        if ( isset( $_POST['id'], $_POST['content'] ) ) {
+        if ( !isset( $_POST['id'] ) ) {
+            $article = new \App\Models\Article();
+        } else {
+            $article = \App\Models\Article::findById( $_POST['id'] ); //false | Article
+        }
 
-                            if ( '' === $_POST['id'] ) { //новая новость
-                                $article = new \App\Models\Article();
-                            } else { //существующая новость
-                                $article = \App\Models\Article::findById( $_POST['id'] );
-                            }
-
-                            if (false !==$article) { //если нет ошибок
-                                $article->content = $_POST['content'];
-                                $article->save();
-                                $res = true;
-                            }
-
-                        }
-                    break;
-                case 'delete':
-                    if ( isset( $_POST['id'] ) ) {
-
-                        $article = \App\Models\Article::findById( $_POST['id'] );
-
-                        if (false !==$article) { //ошибка
-
-                            $article->delete();
-                            $res = true;
-                        }
-
-                    }
-                    break;
+        if ( is_object($article) ) {
+            if ( isset( $_POST['content'] ) ) {
+                $article->content = $_POST['content'];
+                $article->save();
+                $res = true;
             }
         }
-
-        if ( !isset($res) ) {
-            $res = false;
-        }
         
-        $this->view->result = $res;
+        $this->view->result = $res ?? false;
         $this->view->display(__DIR__ . '/../../Templates/adminPanel/save.php');
     }
 

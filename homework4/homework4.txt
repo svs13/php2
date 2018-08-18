@@ -100,3 +100,13 @@ $ctrl->dispatch();
 2. Изменил шаблон index.php, adminPanel/index.php, adminPanel/editing.php
 3. Проверил работоспособность
 4. Удалил из Model мусор
+
+Редактирование от 17.08.18 (по ошибкам дз-2)
+1. /App/Config.php изменил имя с $config на $instance.
+2. /App/Model.php delete() - удалено очищение свойств.
+3. В /App/Controllers/Save.php выполнял 2 разных действия: сохранение и удаление. Разбил на части.
+- добавлен контроллер Delete, добавлен шаблон delete
+- изменён контроллер Save, Editing
+- изменён шаблон index, editing, save
+4. Добавил в /App/Models/Article.php __isset() return false
+Проверил работоспособность.
