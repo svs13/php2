@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \App\Models\Article $article
+ * @var bool $result
  */
 ?>
 <!doctype html>

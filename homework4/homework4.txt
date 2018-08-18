@@ -110,3 +110,6 @@ $ctrl->dispatch();
 - изменён шаблон index, editing, save
 4. Добавил в /App/Models/Article.php __isset() return false
 Проверил работоспособность.
+
+Редакактирование от 17.08.18
+1. Изменён PHPDoc шаблонов save, delete
