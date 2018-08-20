@@ -1,0 +1,14 @@
+2018-08-15 14:56:11 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Model.php Line: 46 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-15 14:56:19 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Model.php Line: 46 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-15 14:56:33 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Model.php Line: 46 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-15 14:57:10 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 23 Message: Ошибка соединения с базой данных
+2018-08-15 14:57:33 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 23 Message: Ошибка соединения с базой данных
+2018-08-18 17:51:34 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 23 Message: Ошибка соединения с базой данных
+2018-08-18 17:52:00 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 23 Message: Ошибка соединения с базой данных
+2018-08-18 18:22:49 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Model.php Line: 37 Message: Ошибка 404 - не найдена запись в базе данных
+2018-08-19 20:16:29 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-19 20:18:03 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-19 20:19:54 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-19 20:21:10 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-19 20:22:03 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-19 20:22:49 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
