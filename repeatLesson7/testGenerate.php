@@ -28,7 +28,6 @@ foreach (data() as $x) {
 
 echo $sum;
 
-
 //проверка
 function test()
 {
@@ -37,7 +36,7 @@ function test()
 
     while ($i <= 4) {
         echo '2';
-        yield $i; // возвр. int
+        var_dump(yield $i); // возвр. int. var_dump возвратит null
         echo '3';
         $i = $i + 1;
         yield; // возвр. null

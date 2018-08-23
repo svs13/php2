@@ -99,3 +99,9 @@ echo $hello('John');
 $lang = [
     'hello' => 'Привет'
 ];
+
+$a = 'test';
+var_dump(function () use ($a) {
+
+});
+
