@@ -12,3 +12,5 @@
 2018-08-19 20:21:10 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
 2018-08-19 20:22:03 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
 2018-08-19 20:22:49 Exception. File: F:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-23 11:57:50 Exception. File: C:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 18 Message: Ошибка соединения с базой данных
+2018-08-23 12:25:05 Exception. File: C:\OpenServer\OSPanel\domains\php2\homework6\App\Db.php Line: 46 Message: Ошибка выполнения запроса базы данных
