@@ -20,12 +20,12 @@ class Save extends AdminPanelController
             $article = \App\Models\Article::findById( $_POST['id'] );
         }
 
-        $property = [];
-        $property['content'] = $_POST['content'] ?? null;
+        $properties = [];
+        $properties['content'] = $_POST['content'] ?? null;
 
         try {
 
-            $article->fill($property);
+            $article->fill($properties);
 
         } catch (Validation $exception) {
             $errors = $exception->getAll();

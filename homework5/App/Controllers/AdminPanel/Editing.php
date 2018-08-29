@@ -14,7 +14,8 @@ class Editing extends AdminPanelController
     protected function action()
     {
         if ( !isset( $_GET['id'] ) ) {
-            return false;
+            header('Location: /homework5/adminPanel/index/');
+            exit;
         }
 
         $this->view->article = \App\Models\Article::findById( $_GET['id'] );
