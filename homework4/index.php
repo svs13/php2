@@ -12,12 +12,9 @@ if (null !== $router->ctrl) {
          */
         $ctrl = new $router->ctrl;
 
-        $res = $ctrl->dispatch();
+        $ctrl->dispatch();
 
-        if (false !== $res) { //если ошибок нет, то завершаем работу, иначе - на главную
-
-            exit;
-        }
+        exit;
     }
 }
 

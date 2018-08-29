@@ -11,16 +11,15 @@ class Delete extends AdminPanelController
     {
 
         if ( isset( $_GET['id'] ) ) {
+
             $article = \App\Models\Article::findById( $_GET['id'] ); //false | Article
 
             if ( false !== $article ) {
                 $article->delete();
-                $res = true;
             }
         }
 
-        $this->view->result = $res ?? false;
-        $this->view->display(__DIR__ . '/../../Templates/adminPanel/delete.php');
+        header('Location: /homework4/adminPanel/index/');
     }
 
 }

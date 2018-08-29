@@ -16,7 +16,9 @@ class Article extends Controller
 
         if ( empty($article) ) { //ошибка
 
-            return false;
+            header('Location: /homework4/');
+
+            exit;
         }
 
         $this->view->article = $article ;
