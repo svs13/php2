@@ -5,6 +5,9 @@ namespace App;
 trait IteratorTrait
 {
 
+    public $data = [];
+
+
     public function rewind()
     {
         reset($this->data);
