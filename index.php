@@ -41,5 +41,12 @@
             <a href="/homework6/index.php" target="_blank">Главная страница.</a>
             <a href="/homework6/homework6.txt" target="_blank">Комментарии.</a>
         </p>
+
+        <p>Урок 7. Современные стандарты PHP<br>
+            <a href="/repeatLesson7/" target="_blank">Повтор урока.</a>
+            <a href="/homework7/index.php" target="_blank">Главная страница.</a>
+            <a href="/homework7/homework7.txt" target="_blank">Комментарии.</a>
+        </p>
+
     </body>
 </html>
