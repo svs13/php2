@@ -36,6 +36,16 @@ class Router
         }
     }
 
+    public function isDefined()
+    {
+        if (null !== $this->ctrl) {
+            if (null !== $this->action) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * @return string|null
      */
