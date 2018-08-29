@@ -21,11 +21,7 @@ abstract class Controller
             die('Доступ закрыт');
         }
 
-        $res = $this->action();
-
-        if (false === $res) { //если ошибка при выполнении
-            return false;
-        }
+        $this->action();
     }
 
     protected function access() : bool

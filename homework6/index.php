@@ -4,12 +4,7 @@ require __DIR__ . '/autoload.php';
 
 $router = new \App\Router();
 
-if (null === $router->ctrl) {
-    header('Location: /homework6/');
-    exit;
-}
-
-if (null === $router->action) {
+if ( !$router->isDefined() ) {
     header('Location: /homework6/');
     exit;
 }
@@ -19,12 +14,7 @@ try {
      * @var \App\Controller $ctrl
      */
     $ctrl = new $router->ctrl;
-    $res = $ctrl->dispatch();
-
-    if (false === $res) { //если ошибка, то на главную
-        header('Location: /homework6/');
-        exit;
-    }
+    $ctrl->dispatch();
 } catch (\App\Exceptions\DbNotFoundRecord $exception) {
     (new \App\Log())->addException($exception);
 
