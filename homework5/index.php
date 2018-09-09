@@ -17,7 +17,7 @@ try {
 
     $ctrl->dispatch();
 
-} catch (\App\Exceptions\DbNotFoundRecord $exception) {
+} catch (\App\Exceptions\E404Exception $exception) {
 
     ( new \App\Log() )->addException($exception);
 
@@ -27,7 +27,7 @@ try {
 
     $ctrl->dispatch();
 
-} catch (\App\Exceptions\Db $exception) {
+} catch (\App\Exceptions\DbException $exception) {
 
     ( new \App\Log() )->addException($exception);
 

@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-class DbNotFoundRecord extends Db
+class DbException extends \Exception
 {
 
 }

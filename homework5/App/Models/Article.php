@@ -15,8 +15,8 @@ class Article extends Model
     protected $author_id; //имя задано в ДЗ
 
     /**
-     * @throws \App\Exceptions\Db
-     * @throws \App\Exceptions\DbNotFoundRecord
+     * @throws \App\Exceptions\DbException
+     * @throws \App\Exceptions\E404Exception
      */
     public function __get($name)
     {
@@ -40,15 +40,10 @@ class Article extends Model
         return false;
     }
 
-
-    public function fill(array $data)
-    {
-        $this->validate($data); //если не валидно - throws MultiExceptions
-
-        $this->content = $data['content'];
-    }
-
-
+    /**
+     * @param array $data
+     * @throws \App\Exceptions\Validation
+     */
     protected function validate(array $data)
     {
         $errors = new \App\Exceptions\Validation();
