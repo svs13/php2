@@ -9,7 +9,7 @@ abstract class Model
 
     /**
      * @return \Generator
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     public static function findAll()
     {
@@ -20,8 +20,8 @@ abstract class Model
 
     /**
      * @return static
-     * @throws \App\Exceptions\Db
-     * @throws \App\Exceptions\DbNotFoundRecord
+     * @throws \App\Exceptions\DbException
+     * @throws \App\Exceptions\E404Exception
      */
     public static function findById(string $id)
     {
@@ -29,14 +29,14 @@ abstract class Model
         $data = (new Db())->query($sql, [':id' => $id], static::class);
 
         if (empty($data)) {
-            throw new \App\Exceptions\DbNotFoundRecord('Ошибка 404 - не найдена запись в базе данных');
+            return false;
         }
         return $data[0];
     }
 
     /**
      * @return \Generator
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     public static function findLastRecords(int $count)
     {
@@ -56,7 +56,7 @@ abstract class Model
     }
 
     /**
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     public function delete()
     {
@@ -72,7 +72,7 @@ abstract class Model
     }
 
     /**
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     protected function update()
     {
@@ -94,7 +94,7 @@ abstract class Model
     }
 
     /**
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     protected function insert()
     {
@@ -122,6 +122,15 @@ abstract class Model
      * @param array $data
      * @throws \App\Exceptions\Validation
      */
-    abstract public function fill(array $data);
+    public function fill(array $data)
+    {
+        $this->validate($data); //если не валидно - throws MultiExceptions
+
+        foreach ($data as $index => $value) {
+            $this->$index = $value;
+        }
+    }
+
+    abstract protected function validate(array $data);
 }
 

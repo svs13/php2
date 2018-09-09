@@ -7,7 +7,7 @@ use App\Controller;
 class Index extends Controller
 {
     /**
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     protected function action()
     {

@@ -7,7 +7,7 @@ use App\AdminPanelController;
 class Index extends AdminPanelController
 {
     /**
-     * @throws \App\Exceptions\Db
+     * @throws \App\Exceptions\DbException
      */
     protected function action()
     {

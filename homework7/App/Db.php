@@ -12,7 +12,7 @@ class Db
 
     /**
      * Db constructor.
-     * @throws Exceptions\Db
+     * @throws Exceptions\DbException
      */
     public function __construct()
     {
@@ -24,7 +24,7 @@ class Db
         try {
             $this->dbh = new \PDO($dsn, $data['login'], $data['password']);
         } catch (\PDOException $exception) {
-            throw new \App\Exceptions\Db('Ошибка соединения с базой данных',42);
+            throw new \App\Exceptions\DbException('Ошибка соединения с базой данных',42);
         }
     }
 
@@ -33,18 +33,18 @@ class Db
      * @param array $params
      * @param string $class
      * @return array
-     * @throws Exceptions\Db
+     * @throws Exceptions\DbException
      */
     public function query(string $sql, array $params = [], string $class = \stdClass::class)
     {
         $sth = $this->dbh->prepare($sql);
 
         if (false === $sth) {
-            throw new \App\Exceptions\Db('Ошибка подготовки запроса базы данных');
+            throw new \App\Exceptions\DbException('Ошибка подготовки запроса базы данных');
         }
 
         if (!$sth->execute($params)) {
-            throw new \App\Exceptions\Db('Ошибка выполнения запроса базы данных');
+            throw new \App\Exceptions\DbException('Ошибка выполнения запроса базы данных');
         }
 
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
@@ -55,18 +55,18 @@ class Db
      * @param array $params
      * @param string $class
      * @return \Generator
-     * @throws Exceptions\Db
+     * @throws Exceptions\DbException
      */
     public function queryEach(string $sql, array $params = [], string $class = \stdClass::class)
     {
         $sth = $this->dbh->prepare($sql);
 
         if (false === $sth) {
-            throw new \App\Exceptions\Db('Ошибка подготовки запроса базы данных');
+            throw new \App\Exceptions\DbException('Ошибка подготовки запроса базы данных');
         }
 
         if (!$sth->execute($params)) {
-            throw new \App\Exceptions\Db('Ошибка выполнения запроса базы данных');
+            throw new \App\Exceptions\DbException('Ошибка выполнения запроса базы данных');
         }
 
         $sth->setFetchMode(\PDO::FETCH_CLASS, $class);
@@ -79,18 +79,18 @@ class Db
     /**
      * @param string $query
      * @param array $params
-     * @throws Exceptions\Db
+     * @throws Exceptions\DbException
      */
     public function execute(string $query, array $params = [])
     {
         $sth = $this->dbh->prepare($query);
 
         if (false === $sth) {
-            throw new \App\Exceptions\Db('Ошибка подготовки запроса базы данных');
+            throw new \App\Exceptions\DbException('Ошибка подготовки запроса базы данных');
         }
 
         if (!$sth->execute($params)) {
-            throw new \App\Exceptions\Db('Ошибка выполнения запроса базы данных');
+            throw new \App\Exceptions\DbException('Ошибка выполнения запроса базы данных');
         }
     }
 

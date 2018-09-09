@@ -16,14 +16,14 @@ try {
     $ctrl = new $router->ctrl;
     $ctrl->dispatch();
 
-} catch (\App\Exceptions\DbNotFoundRecord $exception) {
+} catch (\App\Exceptions\E404Exception $exception) {
     (new \App\Log())->addException($exception);
 
     $ctrl = new \App\Controllers\Error();
     $ctrl->message = $exception->getMessage();
     $ctrl->htmlResponseCode = 404;
     $ctrl->dispatch();
-} catch (\App\Exceptions\Db $exception) {
+} catch (\App\Exceptions\DbException $exception) {
     (new \App\Log())->addException($exception);
 
     if (42 === $exception->getCode()) { //Ошибка соединения

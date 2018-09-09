@@ -7,8 +7,8 @@ use App\Controller;
 class Article extends Controller
 {
     /**
-     * @throws \App\Exceptions\Db
-     * @throws \App\Exceptions\DbNotFoundRecord
+     * @throws \App\Exceptions\DbException
+     * @throws \App\Exceptions\E404Exception
      */
     protected function action()
     {
@@ -17,7 +17,13 @@ class Article extends Controller
             exit;
         }
 
-        $this->view->article = \App\Models\Article::findById($_GET['id']);
+        $article = \App\Models\Article::findById( $_GET['id'] );
+
+        if (false === $article) {
+            throw new \App\Exceptions\E404Exception('Ошибка 404 - не найдена запись в базе данных');
+        }
+
+        $this->view->article = $article;
         $this->view->display(__DIR__ . '/../Templates/article.php');
     }
 }

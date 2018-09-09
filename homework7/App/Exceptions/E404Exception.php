@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-class DbNotFoundRecord extends Db
+class E404Exception extends DbException
 {
 
 }
