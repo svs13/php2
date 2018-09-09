@@ -12,8 +12,8 @@ abstract class Controller
     }
 
     /**
-     * @throws \App\Exceptions\Db
-     * @throws \App\Exceptions\DbNotFoundRecord
+     * @throws \App\Exceptions\DbException
+     * @throws \App\Exceptions\E404Exception
      */
     public function dispatch()
     {
@@ -30,8 +30,8 @@ abstract class Controller
     }
 
     /**
-     * @throws \App\Exceptions\Db
-     * @throws \App\Exceptions\DbNotFoundRecord
+     * @throws \App\Exceptions\DbException
+     * @throws \App\Exceptions\E404Exception
      */
     abstract protected function action();
 }

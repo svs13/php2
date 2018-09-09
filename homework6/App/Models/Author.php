@@ -9,12 +9,6 @@ class Author extends Model
     protected static $table = 'authors';
     public $name;
 
-    public function fill(array $data)
-    {
-        $this->validate($data); //если не валидно - throws MultiExceptions
-        $this->name = $data['name'];
-    }
-
     /**
      * @param array $data
      * @throws \App\Exceptions\Validation

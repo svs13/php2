@@ -8,8 +8,8 @@ use App\Exceptions\Validation;
 class Save extends AdminPanelController
 {
     /**
-     * @throws \App\Exceptions\Db
-     * @throws \App\Exceptions\DbNotFoundRecord
+     * @throws \App\Exceptions\DbException
+     * @throws \App\Exceptions\E404Exception
      */
     protected function action()
     {
@@ -17,6 +17,10 @@ class Save extends AdminPanelController
             $article = new \App\Models\Article();
         } else {
             $article = \App\Models\Article::findById($_POST['id']);
+
+            if (false === $article) {
+                throw new \App\Exceptions\E404Exception('Ошибка 404 - не найдена запись в базе данных');
+            }
         }
 
         $properties = [];
